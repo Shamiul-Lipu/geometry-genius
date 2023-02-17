@@ -42,20 +42,78 @@
                             Main section
     --------------------------------------------------------------------------->
     <main class="container mx-auto">
-        <section class="flex xs:flex-col sm:flex-col lg:flex-row justify-between">
+        <section class="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row justify-between">
             <!-- Interactive section -->
             <!-- ------------------- -->
             <div class="gap-5 grid order-1 xs:grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-5">
-                <!-- Triangle Card -->
+
+                <!-- Triangle -->
+                <!-- Card No1.-->
                 <div class="p-5 rounded-xl shadow-2xl text-center">
-                    <div class="flex justify-center">
+                    <div class="flex justify-center items-center">
                         <img src="images/triangle.png" alt="yellow triangle">
                     </div>
                     <h3 class="text-xl font-semibold py-1">Triangle</h3>
-                    <h4 class="py-1">Area (A) = 0.5 x b x h</h4>
+                    <h4 class="py-1 text-xs">Area (A) = 0.5 x b x h</h4>
                     <!-- display input -->
                     <div class="py-1 flex gap-3 justify-center">
                         <h4>b=<span>4</span>cm h=<span>5</span>cm</h4>
+                        <!-- edit icon -->
+                        <img class="btn-edit w-6 h-6 hover:bg-blue-500" src="images/edit.png" alt="edit icon"
+                            title="click to edit input field">
+                    </div>
+                    <!-- input field -->
+                    <div class="hidden py-4 gap-1 justify-center items-center">
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="b">
+                        <label class="px-1" for="">cm</label>
+
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="h">
+                        <label class="px-1" for="">cm</label>
+                        <img class="btn-to-display w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
+                            src="images/check-mark.png" alt="check-mark icon" title="click to display input field">
+                    </div>
+                    <button
+                        class="btn-calculate mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Calculate</button>
+                </div>
+
+                <!-- Rectangle -->
+                <!-- Card No2.-->
+                <div class="p-5 rounded-xl shadow-2xl text-center">
+                    <div class="flex justify-center items-center">
+                        <img src="images/rectangle.png" alt="yellow triangle">
+                    </div>
+                    <h3 class="text-xl font-semibold py-1">Rectangle</h3>
+                    <h4 class="py-1 text-xs">Area (A) = w x l</h4>
+                    <!-- display input -->
+                    <div class="py-1 flex gap-3 justify-center">
+                        <h4>w=<span>4</span>cm l=<span>5</span>cm</h4>
+                        <img class="btn-edit w-6 h-6 hover:bg-blue-500" src="images/edit.png" alt="edit icon">
+                    </div>
+                    <!-- input field -->
+                    <div class="hidden py-4 gap-1 justify-center items-center">
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="w">
+                        <label class="px-1" for="">cm</label>
+
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="l">
+                        <label class="px-1" for="">cm</label>
+                        <img class="btn-to-display w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
+                            src="images/check-mark.png" alt="check-mark icon">
+                    </div>
+                    <button
+                        class="btn-calculate mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Calculate</button>
+                </div>
+
+                <!-- Parallelogram -->
+                <!---- Card No3.----->
+                <div class="p-5 rounded-xl shadow-2xl text-center">
+                    <div class="flex justify-center items-center">
+                        <img src="images/parallelogram.png" alt="Parallelogram">
+                    </div>
+                    <h3 class="text-xl font-semibold py-1">Parallelogram</h3>
+                    <h4 class="py-1 text-xs">Area (A) = b x h</h4>
+                    <!-- display input -->
+                    <div class="py-1 flex gap-3 justify-center">
+                        <h4>b=<span>10</span>cm h=<span>12</span>cm</h4>
                         <img class="w-6 h-6 hover:bg-blue-500" src="images/edit.png" alt="edit icon">
                     </div>
                     <!-- input field -->
@@ -64,70 +122,84 @@
                         <label for="">cm</label>
                         <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="h">
                         <label for="">cm</label>
-                        <img class="w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
+                        <img class="btn-to-display w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
                             src="images/check-mark.png" alt="check-mark icon">
                     </div>
                     <button class="mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Calculate</button>
                 </div>
-                <!-- Triangle Card -->
+
+                <!---- Rhombus ------>
+                <!---- Card No4.----->
                 <div class="p-5 rounded-xl shadow-2xl text-center">
-                    <img src="images/triangle.png" alt="yellow triangle">
-                    <h3 class="text-xl font-semibold py-1">Triangle</h3>
-                    <h4 class="py-1">Area (A) = 0.5 x b x h</h4>
+                    <div class="flex justify-center items-center">
+                        <img src="images/rhombus.png" alt="rhombus">
+                    </div>
+                    <h3 class="text-xl font-semibold py-1">Rhombus</h3>
+                    <h4 class="py-1 text-xs">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></h4>
                     <!-- display input -->
                     <div class="py-1 flex gap-3 justify-center">
-                        <h4>b=<span>4</span>cm h=<span>5</span>cm</h4>
+                        <h4>d<sub>1</sub>=<span id="spacial-value-one">10</span>cm d<sub>2</sub>=<span
+                                id="spacial-value-two">12</span>cm</h4>
                         <img class="w-6 h-6 hover:bg-blue-500" src="images/edit.png" alt="edit icon">
                     </div>
                     <!-- input field -->
                     <div class="py-4 flex gap-1 justify-center items-center">
-                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="b">
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="d1">
                         <label for="">cm</label>
-                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="h">
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="d2">
                         <label for="">cm</label>
-                        <img class="w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
+                        <img id="special-btn-to-display"
+                            class="w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
                             src="images/check-mark.png" alt="check-mark icon">
                     </div>
                     <button class="mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Calculate</button>
                 </div>
-                <!-- Triangle Card -->
+
+                <!---- Pentagon ----->
+                <!---- Card No3.----->
                 <div class="p-5 rounded-xl shadow-2xl text-center">
-                    <img src="images/triangle.png" alt="yellow triangle">
-                    <h3 class="text-xl font-semibold py-1">Triangle</h3>
-                    <h4 class="py-1">Area (A) = 0.5 x b x h</h4>
+                    <div class="flex justify-center items-center">
+                        <img src="images/pentagon.png" alt="salmon color pentagon">
+                    </div>
+                    <h3 class="text-xl font-semibold py-1">Pentagon</h3>
+                    <h4 class="py-1 text-xs">Area (A) = 0.5 x p x b</h4>
                     <!-- display input -->
                     <div class="py-1 flex gap-3 justify-center">
-                        <h4>b=<span>4</span>cm h=<span>5</span>cm</h4>
+                        <h4>p=<span>6</span>cm b=<span>10</span>cm</h4>
                         <img class="w-6 h-6 hover:bg-blue-500" src="images/edit.png" alt="edit icon">
                     </div>
                     <!-- input field -->
                     <div class="py-4 flex gap-1 justify-center items-center">
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="p">
+                        <label for="">cm</label>
                         <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="b">
                         <label for="">cm</label>
-                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="h">
-                        <label for="">cm</label>
-                        <img class="w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
+                        <img class="btn-to-display w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
                             src="images/check-mark.png" alt="check-mark icon">
                     </div>
                     <button class="mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Calculate</button>
                 </div>
-                <!-- Triangle Card -->
+
+                <!-- Ellipse --->
+                <!-- Card No6.-->
                 <div class="p-5 rounded-xl shadow-2xl text-center">
-                    <img src="images/triangle.png" alt="yellow triangle">
-                    <h3 class="text-xl font-semibold py-1">Triangle</h3>
-                    <h4 class="py-1">Area (A) = 0.5 x b x h</h4>
+                    <div class="flex justify-center items-center">
+                        <img src="images/ellipse.png" alt="grey ellipse">
+                    </div>
+                    <h3 class="text-xl font-semibold py-1">Ellipse</h3>
+                    <h4 class="py-1 text-xs">Area (A) = &#960ab</h4>
                     <!-- display input -->
                     <div class="py-1 flex gap-3 justify-center">
-                        <h4>b=<span>4</span>cm h=<span>5</span>cm</h4>
+                        <h4>a=<span>10</span>cm b=<span>4</span>cm</h4>
                         <img class="w-6 h-6 hover:bg-blue-500" src="images/edit.png" alt="edit icon">
                     </div>
                     <!-- input field -->
                     <div class="py-4 flex gap-1 justify-center items-center">
+                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="a">
+                        <label for="">cm</label>
                         <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="b">
                         <label for="">cm</label>
-                        <input class="pl-3 w-16 bg-gray-200 rounded-md" type="text" placeholder="h">
-                        <label for="">cm</label>
-                        <img class="w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
+                        <img class="btn-to-display w-6 h-6 p-1 ml-3 rounded-md bg-blue-200 hover:bg-blue-500"
                             src="images/check-mark.png" alt="check-mark icon">
                     </div>
                     <button class="mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Calculate</button>
