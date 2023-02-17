@@ -1,19 +1,3 @@
-// // Event Listener for Calculate
-// const items = document.getElementsByClassName('btn-calculate');
-// for (const item of items) {
-//     item.addEventListener('click', function (event) {
-//         const inputOne = event.target.parentNode.childNodes[13].childNodes[1].value;
-//         const inputTwo = event.target.parentNode.childNodes[13].childNodes[5].value;
-
-//     })
-// }
-
-// // function for calculate triangle , rhombus, pentagon
-// function pointfive(valueOne, valueTwo){
-//     const result = 0.5 * valueOne * valueTwo;
-
-// }
-
 // Click Event to get to Edit the input field
 const edit = document.getElementsByClassName('btn-edit');
 for (const item of edit) {
@@ -32,6 +16,7 @@ function displayInputValue(elementOne, elementTwo, valueOne, valueTwo) {
     dispalySecondValue.innerText = valueTwo;
     dispalySecondValue.style.fontWeight = 'bold';
 }
+
 // 
 document.getElementById('special-btn-to-display').addEventListener('click', function (event) {
     const inputOne = event.target.parentNode.parentNode.childNodes[13].childNodes[1].value;
@@ -84,3 +69,29 @@ function validation(elementOne, elementTwo, valueOne, valueTwo) {
         }
     }
 }
+
+
+// Event Listener to get the values for Calculate
+const items = document.getElementsByClassName('btn-calculate');
+for (const item of items) {
+    item.addEventListener('click', function (event) {
+        const valueOne = event.target.parentNode.childNodes[9].childNodes[1].childNodes[1].innerText;
+        const valueTwo = event.target.parentNode.childNodes[9].childNodes[1].childNodes[3].innerText;
+        // for calculate Triangle , Pentagon, Parallelogram, rectangle. accessing element by nodelist length
+        let result;
+        const arr = event.target.parentNode.childNodes[5].childNodes;
+        console.log(event.target.parentNode.childNodes[5].childNodes);
+        // for calculate Triangle , Pentagon
+        if (arr.length == 6) {
+            result = 0.5 * valueOne * valueTwo;
+            return result;
+        }
+        // for calculate Parallelogram, rectangle
+        else {
+            result = valueOne * valueTwo;
+            return result;
+        }
+    })
+}
+
+
