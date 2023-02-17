@@ -77,21 +77,48 @@ for (const item of items) {
     item.addEventListener('click', function (event) {
         const valueOne = event.target.parentNode.childNodes[9].childNodes[1].childNodes[1].innerText;
         const valueTwo = event.target.parentNode.childNodes[9].childNodes[1].childNodes[3].innerText;
-        // for calculate Triangle , Pentagon, Parallelogram, rectangle. accessing element by nodelist length
+        const itemName = event.target.parentNode.childNodes[3].innerText;
+        // for calculate Triangle , Pentagon, Parallelogram, rectangle. 
+        // accessing element by NodeList length.
         let result;
         const arr = event.target.parentNode.childNodes[5].childNodes;
-        console.log(event.target.parentNode.childNodes[5].childNodes);
+
+        console.log(itemName);
         // for calculate Triangle , Pentagon
         if (arr.length == 6) {
-            result = 0.5 * valueOne * valueTwo;
-            return result;
+            result = parseFloat((0.5 * valueOne * valueTwo).toFixed(2));
         }
         // for calculate Parallelogram, rectangle
         else {
-            result = valueOne * valueTwo;
-            return result;
+            result = parseFloat((valueOne * valueTwo).toFixed(2));
         }
+
+        const tableData = {
+            name: itemName,
+            CalcResult: result,
+        }
+
+        displayTable(tableData);
     })
 }
+
+// 
+let count = 1;
+function displayTable(data) {
+    const tbody = document.getElementById('table-body');
+    const tr = document.createElement('tr');
+    tr.setAttribute('class', 'hover');
+    tr.innerHTML = `
+    <th>${count++}</th>
+    <td>${data.name}</td>
+    <td>${data.CalcResult}</td>
+    <td><button class="mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Convert to m<sup>2</sup></button></td>
+
+`
+    tbody.appendChild(tr);
+}
+
+
+
 
 
