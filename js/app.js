@@ -47,6 +47,21 @@ for (const item of clickToDisplay) {
         validation(displayValueOne, displayValueTwo, valueOne, valueTwo);
     })
 }
+// 
+document.getElementById('btn-rhombus-calculate').addEventListener('click', function (event) {
+    // getting the dispaly innerText
+    const itemName = event.target.parentNode.childNodes[3].innerText;
+    const valueOne = document.getElementById('spacial-value-one').innerText;
+    const valueTwo = document.getElementById('spacial-value-two').innerText;
+
+    const result = parseFloat((0.5 * valueOne * valueTwo).toFixed(2));
+    const table = {
+        name: itemName,
+        CalcResult: result,
+    }
+
+    displayTable(table);
+})
 
 // 
 function validation(elementOne, elementTwo, valueOne, valueTwo) {
@@ -101,6 +116,9 @@ for (const item of items) {
         displayTable(tableData);
     })
 }
+
+// 
+
 
 // 
 let count = 1;
