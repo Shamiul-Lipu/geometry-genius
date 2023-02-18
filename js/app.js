@@ -7,7 +7,7 @@ for (const item of edit) {
     })
 }
 
-// function for displaying input value of two variables 
+// Common function for displaying input value of two variables 
 function displayInputValue(elementOne, elementTwo, valueOne, valueTwo) {
     const dispalyFirstValue = elementOne;
     dispalyFirstValue.innerText = valueOne;
@@ -17,18 +17,7 @@ function displayInputValue(elementOne, elementTwo, valueOne, valueTwo) {
     dispalySecondValue.style.fontWeight = 'bold';
 }
 
-// Rhombus Card input, display and validation called from here
-document.getElementById('special-btn-to-display').addEventListener('click', function (event) {
-    const inputOne = event.target.parentNode.parentNode.childNodes[13].childNodes[1].value;
-    const inputTwo = event.target.parentNode.parentNode.childNodes[13].childNodes[5].value;
-    const displayValueOne = document.getElementById('spacial-value-one');
-    const displayValueTwo = document.getElementById('spacial-value-two');
-    const valueOne = parseFloat(inputOne);
-    const valueTwo = parseFloat(inputTwo);
-    validation(displayValueOne, displayValueTwo, valueOne, valueTwo);
-})
-
-// Rhombus btn to display input value, after input and validation check
+// Event button to display input value and call display after validation check
 const clickToDisplay = document.getElementsByClassName('btn-to-display');
 for (const item of clickToDisplay) {
     item.addEventListener('click', function (event) {
@@ -44,24 +33,10 @@ for (const item of clickToDisplay) {
         const valueOne = parseFloat(inputOne);
         const valueTwo = parseFloat(inputTwo);
 
+        // calling for validation
         validation(displayValueOne, displayValueTwo, valueOne, valueTwo);
     })
 }
-// Rhombus input value calculation and button for set the value to the table
-document.getElementById('btn-rhombus-calculate').addEventListener('click', function (event) {
-    // getting the dispaly innerText
-    const itemName = event.target.parentNode.childNodes[3].innerText;
-    const valueOne = document.getElementById('spacial-value-one').innerText;
-    const valueTwo = document.getElementById('spacial-value-two').innerText;
-
-    const result = parseFloat((0.5 * valueOne * valueTwo).toFixed(2));
-    const table = {
-        name: itemName,
-        CalcResult: result,
-    }
-
-    displayTable(table);
-})
 
 // pi Ellipse calculation and button for set the value to the table
 document.getElementById('btn-ellipse-calculate').addEventListener('click', function () {
@@ -79,7 +54,7 @@ document.getElementById('btn-ellipse-calculate').addEventListener('click', funct
     displayTable(table);
 })
 
-// Common function for All input validation check and call for validated display value
+// Common function for All input validation check and call for validated value to display
 function validation(elementOne, elementTwo, valueOne, valueTwo) {
     const displayValueOne = elementOne;
     const displayValueTwo = elementTwo;
@@ -96,6 +71,7 @@ function validation(elementOne, elementTwo, valueOne, valueTwo) {
             return;
         }
         else {
+            // calling for display value after validation
             displayInputValue(displayValueOne, displayValueTwo, inputOne, inputTwo)
         }
     }
@@ -103,8 +79,7 @@ function validation(elementOne, elementTwo, valueOne, valueTwo) {
 
 
 // Common Event Listener to get the values for Calculate and called for display
-// except Rhombus input and calculation 
-// and ellipse calculation part only
+// except ellipse(pi) calculation part only
 const items = document.getElementsByClassName('btn-calculate');
 for (const item of items) {
     item.addEventListener('click', function (event) {
@@ -137,20 +112,34 @@ for (const item of items) {
 // Common function for all Calculated value to daiplay on table
 let count = 1;
 function displayTable(data) {
+    const squareMeter = parseFloat((data.CalcResult / 1000).toFixed(2));
+    // table
     const tbody = document.getElementById('table-body');
     const tr = document.createElement('tr');
     tr.setAttribute('class', 'hover');
     tr.innerHTML = `
     <th>${count++}</th>
     <td>${data.name}</td>
-    <td>${data.CalcResult}</td>
-    <td><button class="mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Convert to m<sup>2</sup></button></td>
-
+    <td class="td-for-sqm" >${data.CalcResult}cm&#178;</td>
+    <td class="td-for-sqm hidden" >${squareMeter}m&#178;</td>
+    <td><button class="squareMeter mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Convert to m<sup>2</sup></button></td>
+ 
 `
+    // appending table
     tbody.appendChild(tr);
+
+    // function for showing Square Centimeter to Square Meter
+    const btns = document.getElementsByClassName('squareMeter')
+    for (const btn of btns) {
+        btn.addEventListener('click', function (e) {
+            const convertBtn = e.target.parentNode.parentNode.childNodes[9];
+            convertBtn.setAttribute('class', 'hidden');
+            // Square centimeter on table data
+            const showSqr = e.target.parentNode.parentNode.childNodes[7];
+            showSqr.setAttribute('class', 'block text-start');
+        })
+    }
 }
-
-
 
 
 
