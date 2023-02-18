@@ -124,7 +124,7 @@ function displayTable(data) {
     tr.setAttribute('class', 'hover');
     tr.innerHTML = `
     <th>${count++}</th>
-    <td>${data.name}</td>
+    <td class="td-name">${data.name}</td>
     <td class="td-for-sqm" >${data.CalcResult}cm&#178;</td>
     <td class="td-for-sqm hidden" >${squareMeter}m&#178;</td>
     <td><button class="squareMeter mt-1 py-2 px-7 bg-blue-500 text-white rounded-lg font-semibold">Convert to m<sup>2</sup></button></td>
@@ -146,29 +146,24 @@ function displayTable(data) {
     }
 }
 
-// // funtion for random card color
-// function randomColor() {
-//     let x = Math.floor(Math.random() * 256);
-//     let y = Math.floor(Math.random() * 256);
-//     let z = Math.floor(Math.random() * 256);
-//     let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-//     return bgColor;
-//     // .body.style.background = bgColor;
+// funtion for random card color
+function randomColor() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    return bgColor;
+}
+const cards = document.querySelectorAll('.display-card');
 
-// }
-// const cards = document.querySelectorAll('.display-card');
-
-// for (const card of cards) {
-//     card.addEventListener('mouseover', function (event) {
-//         color = randomColor();
-
-//         // event.stopPropagation();
-//         const c = event.target;
-//         console.log(event.target.parentNode);
-//         card.style.backgroundColor = color;
-//     }, false)
-//     card.addEventListener('mouseleave', function () {
-//         card.style.backgroundColor = 'white';
-//     })
-// }
+for (const card of cards) {
+    card.addEventListener('mouseover', function (event) {
+        color = randomColor();
+        card.style.backgroundColor = color;
+    })
+    // card.addEventListener('mouseleave', function () {
+    //     color = randomColor();
+    //     card.style.backgroundColor = color;
+    // })
+}
 
