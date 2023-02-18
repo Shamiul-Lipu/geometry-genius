@@ -1,3 +1,8 @@
+// blog
+document.getElementById('blog').addEventListener('click', function () {
+    window.location.href = 'blog.html';
+})
+
 // Click Event to get to -Edit- the hidden input field
 const edit = document.getElementsByClassName('btn-edit');
 for (const item of edit) {
@@ -66,7 +71,7 @@ function validation(elementOne, elementTwo, valueOne, valueTwo) {
         return;
     }
     else {
-        if (valueOne < 0 || valueTwo < 0) {
+        if (valueOne <= 0 || valueTwo <= 0) {
             alert('Please input positive number!')
             return;
         }
@@ -141,5 +146,29 @@ function displayTable(data) {
     }
 }
 
+// // funtion for random card color
+// function randomColor() {
+//     let x = Math.floor(Math.random() * 256);
+//     let y = Math.floor(Math.random() * 256);
+//     let z = Math.floor(Math.random() * 256);
+//     let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+//     return bgColor;
+//     // .body.style.background = bgColor;
 
+// }
+// const cards = document.querySelectorAll('.display-card');
+
+// for (const card of cards) {
+//     card.addEventListener('mouseover', function (event) {
+//         color = randomColor();
+
+//         // event.stopPropagation();
+//         const c = event.target;
+//         console.log(event.target.parentNode);
+//         card.style.backgroundColor = color;
+//     }, false)
+//     card.addEventListener('mouseleave', function () {
+//         card.style.backgroundColor = 'white';
+//     })
+// }
 

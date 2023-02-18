@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- talwindcss link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container mx-auto">
+
+    <header class="px-5">
+        <h2 class="text-3xl text-center py-11">Question Answered</h2>
+    </header>
+    <main class="px-5">
+        <div class="">
+            <h3 class="text-xl font-bold py-3">
+                <!-- Question  -->
+                1. What is DOM and what is the purpose of DOM?
+            </h3>
+            <p>
+                <!-- answer -->
+                DOM stands for Document Object Model.Its how a web browser represents a web page internally.The DOM
+                determines what content should be on a page and how each element of the content relates to the other
+                elements.It is a programming interface that allows us to create, change, or remove elements from the
+                document. We can also add events to these elements to make our page more dynamic.
+                <br>
+                With the Document Object Model, programmers can build documents, navigate their structure, and add,
+                modify,
+                or delete elements and content.
+                By manipulating the DOM, we have infinite possibilities. we can create applications that update the data
+                of
+                the page without needing a refresh. Also, we can create applications that are customizable by the user
+                and
+                then change the layout of the page without a refresh. we can drag, move, and delete elements.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold py-3">
+                <!-- Question -->
+                2. How will you select HTML elements using DOM? Name the DOM methods.
+            </h3>
+            <p>
+                <!-- answer -->
+                We can select any element by using DOM. There are 5 ways in which you can select elements in a DOM using
+                selectors. <br>
+                getElementsByTagName() <br>
+                getElementsByClassName() <br>
+                getElementById() <br>
+                querySelector() <br>
+                querySelectorAll() <br>
+                The DOM has a lot of methods. They are the connection between our nodes (elements) and events
+                <br>
+                here are six different methods in which users can access or manipulate HTML elements using JavaScript:
+                <br>
+                HTML DOM getElementById() <br>
+                HTML DOM getElementsByClassName() <br>
+                HTML DOM getElementsByName() <br>
+                HTML DOM getElementsByTagName() <br>
+                HTML DOM querySelector() <br>
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold py-3">
+                <!-- Question -->
+                3. What is event bubble?
+            </h3>
+            <p>
+                <!-- answer -->
+                When an event happens on an element, it first runs the handlers on it, then on its parent, then all the
+                way
+                up on other ancestors. Event Bubbling is a concept in the DOM. It happens when an element receives an
+                event,
+                and that event bubbles up or can say is transmitted or propagated to its parent and ancestor elements in
+                the
+                DOM tree until it gets to the root element.
+
+                There are a bunch of events where some activity is performed by the user or browser. When the JavaScript
+                code is included in the HTML, JavaScript will react to the events. This process of reacting to events is
+                known as Event handling.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold py-3">
+                <!-- Question -->
+                4. What is a callback function and why will you use it?
+            </h3>
+            <p>
+                <!-- answer -->
+                A callback function is a function passed into another function as an argument, which is then invoked
+                inside
+                the outer function to complete some kind of routine or action. A function that accepts other functions
+                as
+                arguments is called a higher-order function, which contains the logic for when the callback function
+                gets
+                executed. Its the combination of these two that allow us to extend our functionality.A callback function
+                is
+                a function passed into another function as an argument, which is then invoked inside the outer function
+                to
+                complete some kind of routine or action.
+
+                <br>
+                Callbacks ensure that the function will not run before the task is completed but will run right after
+                the
+                task is completed. It develops asynchronous JavaScript code and keeps them safe from errors.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
