@@ -1,4 +1,3 @@
-**geometry-genius
 
 # Interactive Geometry book
 
